@@ -1,0 +1,10 @@
+[package]
+name = "install"
+version = "0.1.0"
+authors = ["Lukáš Hozda <luk.hozda@gmail.com>"]
+
+[dependencies]
+serde = "*"
+toml = "*"
+serde_derive = "*"
+pbr = "*"

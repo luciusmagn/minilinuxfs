@@ -1,0 +1,22 @@
+input = "inputfs"
+output = "fs"
+src_dir = "git"
+
+[[entries]]
+url = "https://github.com/luciusmagn/sbase"
+name = "sbase"
+cmds = ["make"]
+paths = [
+	["cal", "usr/bin"],
+	["cat", "usr/bin"],
+]
+
+[[entries]]
+url = "https://github.com/luciusmagn/ubase"
+name = "ubase"
+cmds = ["make"]
+paths = [
+	["mount", "bin"],
+	["umount", "bin"],
+	["free", "bin"],
+]

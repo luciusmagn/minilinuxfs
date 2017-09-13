@@ -1,13 +1,13 @@
 .PHONY: clean
 
-all: bin/install
-	@bin/install
+all: install
+	@./install
 
-bin/install:
+install:
 	@mkdir -p bin
-	@cd rsrc && cargo build --release
-	@cp rsrc/release/install bin/install
+	@cd src && cargo build --release
+	@cp src/release/install install
 
 clean:
-	@./bin/install clean
-	@rm -rf bin rsrc/debug rsrc/release
+	@./install clean
+	@rm -rf bin src/debug src/release

@@ -57,7 +57,7 @@ fn main()
 			.arg(&entry.url)
 			.arg(Path::new(&cfg.src_dir).join(&entry.name).into_os_string())
 			.status()
-			.expect("failed to execute process");
+			.expect("failed to execute process: git");
 
 		if !cmd.success()
 		{
@@ -79,21 +79,24 @@ fn main()
 	{
 		println!("{}", &entry.name);
 
+		set_current_dir(&absolute_src.join(Path::new(&entry.name)))
+			.expect("couldn't change cwd");
 		for c in &entry.cmds
 		{
-			set_current_dir(&absolute_src.join(Path::new(&entry.name)))
-				.expect("couldn't change cwd");
-			let cmd = Command::new(&c)
+			println!("exec: {} {:?}", c.clone().split_whitespace().next().unwrap(), c.clone().split_whitespace().skip(1).collect::<Vec<_>>());
+			
+			let cmd = Command::new(&c.clone().split_whitespace().next().unwrap())
+				.args(c.clone().split_whitespace().skip(1))
 				.status()
-				.expect("failed to execute process");
+				.expect(&format!("failed to execute process: {}", &c));
 			if !cmd.success()
 			{
 				println!("error during cloning {}, aborting...", &entry.name);
 				exit(-4);
 			}
-			set_current_dir(&orig_cwd)
-				.expect("couldn't change cwd");
 		}
+		set_current_dir(&orig_cwd)
+			.expect("couldn't change cwd");
 	}
 
 	println!("{}",
@@ -120,9 +123,13 @@ fn main()
 				.expect("couldn't change cwd");
 			for c in install
 			{
-				let cmd = Command::new(&c.replace("<<target>>", &absolute_dest.to_str().unwrap()))
+				let cr = c.replace("<<target>>", &absolute_dest.to_str().unwrap());
+				let cmd = Command::new(&cr.clone().split_whitespace().next().unwrap())
+					.args(cr.clone().split_whitespace().skip(1))
 					.status()
-					.expect("failed to execute process");
+					.expect(&format!("failed to execute process: {}",
+						&c.replace("<<target>>", &absolute_dest.to_str().unwrap()))
+					);
 				if !cmd.success()
 				{
 					println!("error during installing {}, aborting...", &entry.name);

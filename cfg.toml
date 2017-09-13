@@ -5,7 +5,12 @@
 [[entries]]
 url = "https://github.com/luciusmagn/sbase"
 name = "sbase"
-cmds = ["make"]
+cmds = [
+	"make",
+	"/usr/bin/cp --help",
+	"cp grep egrep",
+	"cp grep fgrep",
+]
 paths = [
 	["cat", "bin"],
 	["cp", "bin"],
@@ -14,6 +19,8 @@ paths = [
 	["cmp", "bin"],
 	["echo", "bin"],
 	["grep", "bin"],
+	["egrep", "bin"],
+	["fgrep", "bin"],
 	["false", "bin"],
 	["find", "bin"],
 	["head", "bin"],
@@ -40,10 +47,6 @@ paths = [
 	["whoami", "bin"],
 	["xargs", "bin"],
 	["chmod", "bin"],
-]
-install = [
-	"cp ./grep <<target>>/bin/egrep",
-	"cp ./grep <<target>>/bin/fgrep",
 ]
 
 # egrep, fgrep

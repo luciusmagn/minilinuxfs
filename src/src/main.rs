@@ -126,12 +126,12 @@ fn main()
 				.expect("couldn't change cwd");
 			for c in install
 			{
-				let cr = c.replace("<<target>>", &absolute_dest.to_str().unwrap());
+				let cr = c.replace("<<target>>", absolute_dest.to_str().unwrap());
 				let cmd = Command::new(&cr.clone().split_whitespace().next().unwrap())
 					.args(cr.clone().split_whitespace().skip(1))
 					.status()
 					.expect(&format!("failed to execute process: {}",
-						&c.replace("<<target>>", &absolute_dest.to_str().unwrap()))
+						&c.replace("<<target>>", absolute_dest.to_str().unwrap()))
 					);
 				if !cmd.success()
 				{

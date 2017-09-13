@@ -40,11 +40,11 @@ impl Config
 		let mut me = match File::open("cfg.toml")
 		{
 			Ok(f) => f,
-			Err(_) => {eprintln!("failed to open cfg.toml"); exit(-1);}
+			Err(_) => {eprintln!("failed to open cfg.toml"); exit(-1)}
 		};
 		let mut contents = String::new();
 		if me.read_to_string(&mut contents).is_err()
-			{eprintln!("failed to read cfg.toml"); exit(-1);}
+			{eprintln!("failed to read cfg.toml"); exit(-1)}
 		toml::from_str(contents.as_ref())
 	}
 

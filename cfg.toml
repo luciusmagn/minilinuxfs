@@ -75,7 +75,3 @@ cmds = ["./build.sh"]
 paths = [
 	["releases/bash", "bin"]
 ]
-install = [
-	"ln -s <<target>>/bin <<target>>/usr/bin",
-	"ln -s <<target>>/bin <<target>>/usr/local/bin",
-]

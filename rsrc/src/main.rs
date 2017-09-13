@@ -1,5 +1,7 @@
 #[macro_use]
 extern crate serde_derive;
+extern crate ansi_term;
+extern crate copy_dir;
 extern crate toml;
 extern crate pbr;
 
@@ -8,6 +10,8 @@ use std::process::{exit, Command};
 use std::fs::{create_dir, remove_dir_all, copy};
 use std::env::{args, set_current_dir, current_dir};
 
+use ansi_term::Colour::Green;
+use copy_dir::copy_dir;
 use pbr::ProgressBar;
 
 mod cfg;
@@ -41,7 +45,9 @@ fn main()
 
 	let mut pb = ProgressBar::new(cfg.entries.len() as u64);
 	
-	println!("cloning repositories:");
+	println!("{}",
+		Green.paint("cloning repositories:")
+	);
 
 	for entry in &cfg.entries
 	{
@@ -62,7 +68,9 @@ fn main()
 		pb.inc();
 	}
 
-	println!("building:");
+	println!("{}",
+		Green.paint("building:")
+	);
 
 	let absolute_src = orig_cwd.join(Path::new(&cfg.src_dir));
 	let absolute_dest = orig_cwd.join(Path::new(&cfg.output));
@@ -88,20 +96,21 @@ fn main()
 		}
 	}
 
-	println!("installing:");
-
-	copy(&Path::new(&cfg.input), &Path::new(&cfg.output))
+	println!("{}",
+		Green.paint("installing:")
+	);
+	copy_dir(&Path::new(&cfg.input), &absolute_dest)
 		.expect("couldn't copy input directory");
 
 	for entry in &cfg.entries
 	{
-		println!("{}", &entry.name);
+		println!("{}", Green.paint(entry.name.clone()));
 
 		for &(ref src, ref dest) in &entry.paths
 		{
 			copy(
 				&absolute_src.join(Path::new(&entry.name).join(Path::new(src))),
-				&absolute_dest.join(Path::new(dest))
+				&absolute_dest.join(Path::new(dest).join(Path::new(src).file_name().unwrap()))
 			).expect(format!("could not copy {} to {}", src, dest).as_ref());
 		}
 
@@ -111,7 +120,7 @@ fn main()
 				.expect("couldn't change cwd");
 			for c in install
 			{
-				let cmd = Command::new(&c.replace("{{target}}", &absolute_dest.to_str().unwrap()))
+				let cmd = Command::new(&c.replace("<<target>>", &absolute_dest.to_str().unwrap()))
 					.status()
 					.expect("failed to execute process");
 				if !cmd.success()

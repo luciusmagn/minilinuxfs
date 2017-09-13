@@ -1,4 +1,7 @@
-.PHONY: clean rsrc/cfg.rs rsrc/main.rs
+all: bin/install
+	@bin/install
+
+.PHONY: clean rsrc/cfg.rs rsrc/main.rs all
 
 rsrc/cfg.rs rsrc/main.rs:
 	@true
@@ -11,6 +14,3 @@ bin/install: rsrc/cfg.rs rsrc/main.rs
 clean:
 	@./bin/install clean
 	@rm -rf bin rsrc/debug rsrc/release
-
-default: bin/install
-	@bin/install

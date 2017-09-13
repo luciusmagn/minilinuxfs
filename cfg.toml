@@ -1,22 +1,78 @@
-input = "inputfs"
-output = "fs"
-src_dir = "git"
+# input = "inputfs"
+# output = "fs"
+# src_dir = "git"
 
 [[entries]]
 url = "https://github.com/luciusmagn/sbase"
 name = "sbase"
 cmds = ["make"]
 paths = [
-	["cal", "usr/bin"],
-	["cat", "usr/bin"],
+	["cat", "bin"],
+	["cp", "bin"],
+	["cut", "bin"],
+	["date", "bin"],
+	["cmp", "bin"],
+	["echo", "bin"],
+	["grep", "bin"],
+	["false", "bin"],
+	["find", "bin"],
+	["head", "bin"],
+	["ln", "bin"],
+	["ls", "bin"],
+	["mkdir", "bin"],
+	["mv", "bin"],
+	["nl", "bin"],
+	["rev", "bin"],
+	["rm", "bin"],
+	["rmdir", "bin"],
+	["sed", "bin"],
+	["seq", "bin"],
+	["sleep", "bin"],
+	["sort", "bin"],
+	["tail", "bin"],
+	["tar", "bin"],
+	["tee", "bin"],
+	["touch", "bin"],
+	["tr", "bin"],
+	["true", "bin"],
+	["uniq", "bin"],
+	["wc", "bin"],
+	["whoami", "bin"],
+	["xargs", "bin"],
+	["chmod", "bin"],
 ]
+install = [
+	"cp ./grep <<target>>/bin/egrep",
+	"cp ./grep <<target>>/bin/fgrep",
+]
+
+# egrep, fgrep
 
 [[entries]]
 url = "https://github.com/luciusmagn/ubase"
 name = "ubase"
 cmds = ["make"]
 paths = [
-	["mount", "bin"],
-	["umount", "bin"],
-	["free", "bin"],
+	["mknod", "bin"],
+]
+
+[[entries]]
+url = "https://github.com/luciusmagn/9base"
+name = "9base"
+cmds = ["make"]
+paths = [
+	["awk/awk", "bin"],
+	["diff/diff", "bin"],
+]
+
+[[entries]]
+url = "https://github.com/luciusmagn/bash-static"
+name = "bash-static"
+cmds = ["./build.sh"]
+paths = [
+	["releases/bash", "bin"]
+]
+install = [
+	"ln -s <<target>>/bin <<target>>/usr/bin",
+	"ln -s <<target>>/bin <<target>>/usr/local/bin",
 ]

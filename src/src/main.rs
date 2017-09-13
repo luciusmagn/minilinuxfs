@@ -1,7 +1,6 @@
 #[macro_use]
 extern crate serde_derive;
 extern crate ansi_term;
-extern crate copy_dir;
 extern crate toml;
 extern crate pbr;
 
@@ -11,7 +10,6 @@ use std::fs::{create_dir, remove_dir_all, copy};
 use std::env::{args, set_current_dir, current_dir};
 
 use ansi_term::Colour::Green;
-use copy_dir::copy_dir;
 use pbr::ProgressBar;
 
 mod cfg;
@@ -102,7 +100,12 @@ fn main()
 	println!("{}",
 		Green.paint("installing:")
 	);
-	copy_dir(&Path::new(&cfg.input), &absolute_dest)
+
+	Command::new("cp")
+		.arg("-a")
+		.arg(&cfg.input)
+		.arg(&absolute_dest)
+		.status()
 		.expect("couldn't copy input directory");
 
 	for entry in &cfg.entries

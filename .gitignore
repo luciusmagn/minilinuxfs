@@ -3,4 +3,4 @@ release/
 *.so
 fs/
 git/
-bin/
+install

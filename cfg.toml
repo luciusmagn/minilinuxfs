@@ -6,8 +6,7 @@
 url = "https://github.com/luciusmagn/sbase"
 name = "sbase"
 cmds = [
-	"make",
-	"/usr/bin/cp --help",
+	"./build.sh",
 	"cp grep egrep",
 	"cp grep fgrep",
 ]

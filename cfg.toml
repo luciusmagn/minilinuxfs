@@ -74,3 +74,7 @@ cmds = ["./build.sh"]
 paths = [
 	["releases/bash", "bin"]
 ]
+# remove all .gitignore files from the fs
+install = [
+	"find <<target>> -name .gitignore -type f -delete"
+]

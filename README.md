@@ -50,8 +50,8 @@ ve volitelném pořadí:
 | paths   | Pole dvojic cest: zdroj a cíl\*\*            | Může být prázdný |
 | install | Příkazy ke spuštení po kompilace             | Ne               |
 
-\* = Může být absolutní cesta
-\*\* = zdroj je relativní ke kořenu daného repozitáře, cíl je relativní ke kořenu
+\* = Může být absolutní cesta  
+\*\* = zdroj je relativní ke kořenu daného repozitáře, cíl je relativní ke kořenu  
   výsledné adresářové struktury
 
 Pozn 1: U pole install lze v příkazeh využít hodnotu '<\<target\>>', která reprezentuje
@@ -68,102 +68,102 @@ V základní konfigurace stáhne MiniLinuxFS 4 repozitáře:
 
 | sbase            | ubase          | 9base        |
 |------------------|----------------|--------------|
-| [ ]basename      | [ ]chvt        | [ ]ascii     |
-| [ ]cal           | [ ]clear       | [x]awk       |
-| [x] cat          | [ ]ctrlaltdel  | [ ]basename  |
-| [ ]chgrp         | [ ]dd          | [ ]bc        |
-| [x]chmod         | [ ]df          | [ ]cal       |
-| [ ]chown         | [ ]dmesg       | [ ]cat       |
-| [ ]chroot        | [ ]eject       | [ ]cleanname |
-| [ ]cksum         | [ ]fallocate   | [ ]cmp       |
-| [x]cmp           | [ ]free        | [ ]date      |
-| [ ]cols          | [ ]freeramdisk | [ ]dc        |
-| [ ]comm          | [ ]fsfreeze    | [ ]dd        |
-| [x]cp            | [ ]getty       | [x]diff      |
-| [ ]cron          | [ ]halt        | [ ]du        |
-| [ ]cut           | [ ]hwclock     | [ ]echo      |
-| [x]date          | [ ]id          | [ ]ed        |
-| [ ]dirname       | [ ]insmod      | [ ]factor    |
-| [ ]du            | [ ]killall     | [ ]fmt       |
-| [x]echo          | [ ]last        | [ ]fortune   |
-| [ ]ed            | [ ]lastlog     | [ ]freq      |
-| [ ]env           | [ ]login       | [ ]getflags  |
-| [ ]expand        | [ ]lsmod       | [ ]grep      |
-| [ ]expr          | [ ]lsusb       | [ ]hoc       |
-| [x]false         | [ ]mesg        | [ ]join      |
-| [x]find          | [x]mknod       | [ ]listen1   |
-|                  | [ ]mkswap      | [ ]look      |
-| [ ]flock         | [ ]mount       | [ ]ls        |
-| [ ]fold          | [ ]mountpoint  | [ ]md5sum    |
-| [ ]getconf       | [ ]nologin     | [ ]mk        |
-| [x]grep          | [ ]pagesize    | [ ]mkdir     |
-| [x]head          | [ ]passwd      | [ ]mtime     |
-| [ ]hostname      | [ ]pidof       | [ ]pbd       |
-| [ ]join          | [ ]pivot_root  |              |
-| [ ]kill          | [ ]ps          | [ ]primes    |
-| [ ]link          | [ ]pwdx        | [ ]rc        |
-| [x]ln            | [ ]readahead   | [ ]read      |
-| [ ]logger        | [ ]respawn     | [ ]rm        |
-| [ ]logname       | [ ]rmmod       | [ ]sam       |
-| [x]ls            | [ ]stat        | [ ]sed       |
-| [ ]md5sum        | [ ]su          | [ ]seq       |
-| [x]mkdir         | [ ]swaplabel   | [ ]sha1sum   |
-| [ ]mkfifo        | [ ]swapoff     | [ ]sleep     |
-| [ ]mktemp        | [ ]swapon      | [ ]sort      |
-| [x]mv            | [ ]switch_root | [ ]split     |
-| [ ]nice          | [ ]sysctl      | [ ]ssam      |
-| [x]nl            | [ ]truncate    | [ ]strings   |
-| [ ]nohup         | [ ]umount      | [ ]tail      |
-| [ ]od            | [ ]unshare     | [ ]tee       |
-| [ ]paste         | [ ]uptime      | [ ]test      |
-| [ ]pathchk       | [ ]vtallow     | [ ]touch     |
-| [ ]printenv      | [ ]watch       | [ ]tr        |
-| [ ]printf        | [ ]who         | [ ]troff     |
-| [ ]pwd           |                | [ ]unicode   |
-| [ ]readlink      |                | [ ]uniq      |
-| [ ]renice        |                | [ ]unutf     |
-| [x]rev           |                | [ ]urlencode |
-| [x]rm            |                | [ ]wc        |
-| [x]rmdir         |                | [ ]yacc      |
-| [x]sed           |                |              |
-| [x]seq           |                |              |
-| [ ]setsid        |                |              |
-| [ ]sha1sum       |                |              |
-| [ ]sha224sum     |                |              |
-| [ ]sha256sum     |                |              |
-| [ ]sha384sum     |                |              |
-| [ ]sha512-224sum |                |              |
-| [ ]sha512-256sum |                |              |
-| [ ]sha512sum     |                |              |
-| [x]sleep         |                |              |
-| [x]sort          |                |              |
-| [ ]split         |                |              |
-| [ ]sponge        |                |              |
-| [ ]strings       |                |              |
-| [ ]sync          |                |              |
-| [x]tail          |                |              |
-| [x]tar           |                |              |
-| [x]tee           |                |              |
-| [ ]test          |                |              |
-| [ ]tftp          |                |              |
-| [ ]time          |                |              |
-| [x]touch         |                |              |
-| [x]tr            |                |              |
-| [x]true          |                |              |
-| [ ]tsort         |                |              |
-| [ ]tty           |                |              |
-| [ ]uname         |                |              |
-| [ ]unexpand      |                |              |
-| [x]uniq          |                |              |
-| [ ]unlink        |                |              |
-| [ ]uudecode      |                |              |
-| [ ]uuencode      |                |              |
-| [x]wc            |                |              |
-| [ ]which         |                |              |
-| [x]whoami        |                |              |
-| [x]xargs         |                |              |
-| [ ]xinstall      |                |              |
-| [ ]yes           |                |              |
+| [ ] basename     | [ ] chvt       | [ ] ascii    |
+| [ ] cal          | [ ] clear      | [x] awk      |
+| [x] cat          | [ ] ctrlaltdel | [ ] basename |
+| [ ] chgrp        | [ ] dd         | [ ] bc       |
+| [x] chmod        | [ ] df         | [ ] cal      |
+| [ ] chown        | [ ] dmesg      | [ ] cat      |
+| [ ] chroot       | [ ] eject      | [ ] cleanname|
+| [ ] cksum        | [ ] fallocate  | [ ] cmp      |
+| [x] cmp          | [ ] free       | [ ] date     |
+| [ ] cols         | [ ] freeramdisk| [ ] dc       |
+| [ ] comm         | [ ] fsfreeze   | [ ] dd       |
+| [x] cp           | [ ] getty      | [x] diff     |
+| [ ] cron         | [ ] halt       | [ ] du       |
+| [ ] cut          | [ ] hwclock    | [ ] echo     |
+| [x] date         | [ ] id         | [ ] ed       |
+| [ ] dirname      | [ ] insmod     | [ ] factor   |
+| [ ] du           | [ ] killall    | [ ] fmt      |
+| [x] echo         | [ ] last       | [ ] fortune  |
+| [ ] ed           | [ ] lastlog    | [ ] freq     |
+| [ ] env          | [ ] login      | [ ] getflags |
+| [ ] expand       | [ ] lsmod      | [ ] grep     |
+| [ ] expr         | [ ] lsusb      | [ ] hoc      |
+| [x] false        | [ ] mesg       | [ ] join     |
+| [x] find         | [x] mknod      | [ ] listen1  |
+|                  | [ ] mkswap     | [ ] look     |
+| [ ] flock        | [ ] mount      | [ ] ls       |
+| [ ] fold         | [ ] mountpoint | [ ] md5sum   |
+| [ ] getconf      | [ ] nologin    | [ ] mk       |
+| [x] grep         | [ ] pagesize   | [ ] mkdir    |
+| [x] head         | [ ] passwd     | [ ] mtime    |
+| [ ] hostname     | [ ] pidof      | [ ] pbd      |
+| [ ] join         | [ ] pivot_root |              |
+| [ ] kill         | [ ] ps         | [ ] primes   |
+| [ ] link         | [ ] pwdx       | [ ] rc       |
+| [x] ln           | [ ] readahead  | [ ] read     |
+| [ ] logger       | [ ] respawn    | [ ] rm       |
+| [ ] logname      | [ ] rmmod      | [ ] sam      |
+| [x] ls           | [ ] stat       | [ ] sed      |
+| [ ] md5sum       | [ ] su         | [ ] seq      |
+| [x] mkdir        | [ ] swaplabel  | [ ] sha1sum  |
+| [ ] mkfifo       | [ ] swapoff    | [ ] sleep    |
+| [ ] mktemp       | [ ] swapon     | [ ] sort     |
+| [x] mv           | [ ] switch_root| [ ] split    |
+| [ ] nice         | [ ] sysctl     | [ ] ssam     |
+| [x] nl           | [ ] truncate   | [ ] strings  |
+| [ ] nohup        | [ ] umount     | [ ] tail     |
+| [ ] od           | [ ] unshare    | [ ] tee      |
+| [ ] paste        | [ ] uptime     | [ ] test     |
+| [ ] pathchk      | [ ] vtallow    | [ ] touch    |
+| [ ] printenv     | [ ] watch      | [ ] tr       |
+| [ ] printf       | [ ] who        | [ ] troff    |
+| [ ] pwd          |                | [ ] unicode  |
+| [ ] readlink     |                | [ ] uniq     |
+| [ ] renice       |                | [ ] unutf    |
+| [x] rev          |                | [ ] urlencode|
+| [x] rm           |                | [ ] wc       |
+| [x] rmdir        |                | [ ] yacc     |
+| [x] sed          |                |              |
+| [x] seq          |                |              |
+| [ ] setsid       |                |              |
+| [ ] sha1sum      |                |              |
+| [ ] sha224sum    |                |              |
+| [ ] sha256sum    |                |              |
+| [ ] sha384sum    |                |              |
+| [ ] sha512-224sum|                |              |
+| [ ] sha512-256sum|                |              |
+| [ ] sha512sum    |                |              |
+| [x] sleep        |                |              |
+| [x] sort         |                |              |
+| [ ] split        |                |              |
+| [ ] sponge       |                |              |
+| [ ] strings      |                |              |
+| [ ] sync         |                |              |
+| [x] tail         |                |              |
+| [x] tar          |                |              |
+| [x] tee          |                |              |
+| [ ] test         |                |              |
+| [ ] tftp         |                |              |
+| [ ] time         |                |              |
+| [x] touch        |                |              |
+| [x] tr           |                |              |
+| [x] true         |                |              |
+| [ ] tsort        |                |              |
+| [ ] tty          |                |              |
+| [ ] uname        |                |              |
+| [ ] unexpand     |                |              |
+| [x] uniq         |                |              |
+| [ ] unlink       |                |              |
+| [ ] uudecode     |                |              |
+| [ ] uuencode     |                |              |
+| [x] wc           |                |              |
+| [ ] which        |                |              |
+| [x] whoami       |                |              |
+| [x] xargs        |                |              |
+| [ ] xinstall     |                |              |
+| [ ] yes          |                |              |
 
 A samozřejmě bash z bash-static. U 9base je potřeba další 
 programy přidat i v Makefile-u. Bash a programy z sbase a ubase
@@ -196,7 +196,7 @@ MiniLinuxFS v základní konfiguraci využívá adresářovou strukturu sta.li:
 
 __Normální průběh je vyvolán příkazem 'make'.__
 
-0. Po spuštění příkazu cargo postaví program install
+1. Po spuštění příkazu cargo postaví program install
 0. Make zkopíruje install do kořenového adresáře repozitáře
 0. install se pokousí přečíst a parsovat konfigurační soubor.
    V případě neúspěchu, program se ukončí s kódem -1, když se
@@ -212,15 +212,18 @@ __Normální průběh je vyvolán příkazem 'make'.__
 
 Pozn 1: V případě chyby v kopírování, změně/přečtení CWD nebo neúspěchu spustit příkaz
 kód panikaří
+
 Pozn 2: Kopírování vstupní souborové struktury používá _'cp -a'_ místo funkce kvůli
 zachování symbolických odkazů.
+
 Pozn 3: Při znovu sestavení install maže a znovu-klonuje původní repozitáře.
 Neměly by tedy proto obsahovat žádné lokální změny mimo soubory vytvořené kompilací
+
 Pozn 4: Výsledky mazání souborů jsou zahozeny
 
 __Resetovací průběh je zpuštěn příkazem 'make clean'__
 
-0. install je spuštěn s parametrem 'clean'
+1. install je spuštěn s parametrem 'clean'
 0. Pokusí se přečíst a parsovat konfigurační soubor
 0. V případě neúspěchu se vypne, jinak smaže výstupní složku
    a složku se staženými repozitáři programů.

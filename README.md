@@ -248,7 +248,7 @@ prostředí:
 * Základní programy neobsahují nic co by mohlo zobrazit procesy hostitelského
   systému (ps, pstree, top), změnit uživatele (su, sudo) nebo ovlivnit
   stav stroje (halt, shutdown, reboot)
-* Nepřítomnost kompilátorů (např pro C/C++ nebo Perl) zamezuje využítí
+* Nepřítomnost překladačů (např pro C/C++ nebo Perl) zamezuje využítí
   exploitů
 * Neobsahuje programy které by vyžadovaly /sys
 

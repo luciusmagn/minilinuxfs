@@ -9,12 +9,12 @@ Tento program generuje Linuxovou adresářovou strukturu podle
 
 ### Obsah
 
-0. [Požadavky](#Požadavky)
-0. [Konfigurace](#Konfigurace)
-0. [Programy](#Programy)
-0. [Adresářová struktura](#Adresářová-struktura)
-0. [Průběh](#Průběh)
-0. [Bezpečnost](#Bezpečnost)
+0. [Požadavky](#požadavky)
+0. [Konfigurace](#konfigurace)
+0. [Programy](#programy)
+0. [Adresářová struktura](#adresářová-struktura)
+0. [Průběh](#průběh)
+0. [Bezpečnost](#bezpečnost)
 
 ### Požadavky
 

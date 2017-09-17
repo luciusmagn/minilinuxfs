@@ -49,6 +49,11 @@ fn main()
 
 	for entry in &cfg.entries
 	{
+		let _ = remove_dir_all(
+			Path::new(&cfg.src_dir)
+			.join(&entry.name)
+			.into_os_string()
+		);
 		let cmd = Command::new("git")
 			.arg("clone")
 			.arg("-q")
@@ -89,7 +94,7 @@ fn main()
 				.expect(&format!("failed to execute process: {}", &c));
 			if !cmd.success()
 			{
-				println!("error during cloning {}, aborting...", &entry.name);
+				eprintln!("error during cloning {}, aborting...", &entry.name);
 				exit(-4);
 			}
 		}
@@ -135,8 +140,8 @@ fn main()
 					);
 				if !cmd.success()
 				{
-					println!("error during installing {}, aborting...", &entry.name);
-					exit(-4);
+					eprintln!("error during installing {}, aborting...", &entry.name);
+					exit(-5);
 				}
 			}
 			set_current_dir(&orig_cwd)

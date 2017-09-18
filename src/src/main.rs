@@ -48,7 +48,9 @@ fn main()
 	);
 
 	for entry in &cfg.entries
-	{
+	{	
+		pb.inc();
+
 		let _ = remove_dir_all(
 			Path::new(&cfg.src_dir)
 			.join(&entry.name)
@@ -67,8 +69,6 @@ fn main()
 			pb.finish_println(&format!("error during cloning {}, aborting...", &entry.name));
 			exit(-3);
 		}
-
-		pb.inc();
 	}
 
 	println!("{}",
@@ -92,6 +92,7 @@ fn main()
 				.args(c.clone().split_whitespace().skip(1))
 				.status()
 				.expect(&format!("failed to execute process: {}", &c));
+
 			if !cmd.success()
 			{
 				eprintln!("error during cloning {}, aborting...", &entry.name);
@@ -138,6 +139,7 @@ fn main()
 					.expect(&format!("failed to execute process: {}",
 						&c.replace("<<target>>", absolute_dest.to_str().unwrap()))
 					);
+
 				if !cmd.success()
 				{
 					eprintln!("error during installing {}, aborting...", &entry.name);

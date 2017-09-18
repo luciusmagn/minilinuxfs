@@ -4,8 +4,9 @@ fs is a statically linked.
 
 ---
 
-Tento program generuje Linuxovou adresářovou strukturu podle
+MiniLinuxFS generuje Linuxovou adresářovou strukturu podle
 [designu](https://sta.li/filesystem) distribuce stali skupiny suckless.org.
+Všechny binární soubory jsou staticky linkované.
 
 ### Obsah
 
@@ -66,7 +67,7 @@ daný příkaz oddělenými libovolnými bílými znaky.
 V základní konfigurace stáhne MiniLinuxFS 4 repozitáře:
 **sbase**, **ubase**, **9base** a **bash-static**. Z nich využívá jen některé programy:
 
-| sbase                               | ubase                             | 9base                           |
+| sbase*                              | ubase                             | 9base                           |
 |-------------------------------------|-----------------------------------|---------------------------------|
 | <ul><li>[ ] basename</li></ul>      | <ul><li>[ ] chvt</li></ul>        | <ul><li>[ ] ascii</li></ul>     |
 | <ul><li>[ ] cal</li></ul>           | <ul><li>[ ] clear</li></ul>       | <ul><li>[x] awk</li></ul>       |
@@ -166,7 +167,7 @@ V základní konfigurace stáhne MiniLinuxFS 4 repozitáře:
 | <ul><li>[ ] yes</li></ul>           |                                   |                                 |
 
 
-A samozřejmě bash z bash-static. U 9base je potřeba další 
+A bash z bash-static. U 9base je potřeba další 
 programy přidat i v Makefile-u. Bash a programy z sbase a ubase
 jsou komprimovány pomocí UPX. Velikost bashe je také snížená pomocí
 programu strip.
@@ -217,7 +218,7 @@ kód panikaří
 Pozn 2: Kopírování vstupní souborové struktury používá _'cp -a'_ místo funkce kvůli
 zachování symbolických odkazů.
 
-Pozn 3: Při znovu sestavení install maže a znovu-klonuje původní repozitáře.
+Pozn 3: Při znovu-sestavení install maže a znovu-klonuje původní repozitáře.
 Neměly by tedy proto obsahovat žádné lokální změny mimo soubory vytvořené kompilací
 
 Pozn 4: Výsledky mazání souborů jsou zahozeny

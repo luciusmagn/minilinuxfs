@@ -96,3 +96,11 @@ paths = [
 	["releases/cp", "bin"]
 ]
 
+
+[[entries]]
+url = "https://github.com/luciusmagn/gawk-static"
+name = "gawk-static"
+cmds = ["./build.sh"]
+paths = [
+	["releases/gawk", "bin"]
+]

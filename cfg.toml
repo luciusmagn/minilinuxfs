@@ -17,7 +17,6 @@ paths = [
 	["fgrep", "bin"],
 	["rev", "bin"],
 	["sed", "bin"],
-	["tar", "bin"],
 ]
 
 # egrep, fgrep
@@ -169,3 +168,12 @@ cmds = ["./build.sh"]
 paths = [
 	["releases/sed", "bin"]
 ]
+
+[[entries]]
+url = "https://github.com/luciusmagn/tar-static"
+name = "tar-static"
+cmds = ["./build.sh"]
+paths = [
+	["releases/tar", "bin"]
+]
+

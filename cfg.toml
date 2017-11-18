@@ -16,7 +16,6 @@ paths = [
 	["egrep", "bin"],
 	["fgrep", "bin"],
 	["rev", "bin"],
-	["sed", "bin"],
 ]
 
 # egrep, fgrep
@@ -27,7 +26,6 @@ name = "ubase"
 cmds = ["make"]
 paths = [
 	["mknod", "bin"],
-	["stat", "bin"],
 ]
 
 [[entries]]
@@ -35,7 +33,6 @@ url = "https://github.com/luciusmagn/9base"
 name = "9base"
 cmds = ["make"]
 paths = [
-	["awk/awk", "bin"],
 	["diff/diff", "bin"],
 ]
 
@@ -55,10 +52,9 @@ cmds = ["./build.sh"]
 paths = [
 	["releases/bash", "bin"]
 ]
-
 # remove all .gitignore files from the fs
 install = [
-	"find <<target>> -name .gitignore -type f -delete"
+	"find <<target>> -name .gitignore -type f -delete",
 ]
 
 [[entries]]
@@ -159,6 +155,9 @@ name = "gawk-static"
 cmds = ["./build.sh"]
 paths = [
 	["releases/gawk", "bin"]
+]
+install = [
+	"ln -s gawk <<target>>/bin/awk",
 ]
 
 [[entries]]
